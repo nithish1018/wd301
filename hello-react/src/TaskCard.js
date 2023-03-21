@@ -6,9 +6,9 @@ const TaskCard = (props) => {
     <div className='TaskItem border-black'>
       <h3 className="text-xl font-semibold border-black">{props.title}</h3>
      {props.dueDate &&<p> Due on:{props.dueDate}</p>}
-      {props.completedon && <p> Completed On:{props.completedon}</p>}
+      {props.completedAtDate && <p> Completed On:{props.completedAtDate}</p>}
 
-      <p>Assignee: {props.assignee}</p>
+      <p>Assignee: {props.assigneeName}</p>
     </div>
   )
 }
