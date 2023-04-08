@@ -1,6 +1,12 @@
-import './TaskCard.css'
-
-const TaskCard = (props) => {
+import React from "react";
+import "./TaskCard.css";
+interface TaskCardInterface {
+      title: string,
+      completedAtDate?: string,
+      dueDate?: string,
+      assigneeName: string
+  }
+const TaskCard = (props:TaskCardInterface) => {
   console.log(props)
   return (
     <div className='TaskItem border-black'>
