@@ -18,8 +18,8 @@ function App() {
       </div>
       <div className="bg-gray-200 text-black border-2 border-black rounded-lg p-4 m-2">
         <h1 className="text-xl font-bold px-20 " >Done</h1>
-        <TaskCard title="Design The Mockup" completedAtDate='10th April'assigneeName='Rohit M'></TaskCard>
-        <TaskCard title="Get Approval From Principal" completedAtDate='20th April'assigneeName='Ajay S'></TaskCard>
+        <TaskCard title="Design The Mockup" completedAtDate='10th April' assigneeName='Rohit M'></TaskCard>
+        <TaskCard title="Get Approval From Principal" completedAtDate='20th April' assigneeName='Ajay S'></TaskCard>
 
       </div>
     </div>
