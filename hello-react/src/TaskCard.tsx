@@ -10,8 +10,8 @@ const TaskCard = (props: TaskCardInterface) => {
   return (
     <div className="TaskItem border-black">
       <p className="text-xl font-semibold border-black">{props.title}</p>
-      {props.dueDate && <p> Due on:{props.dueDate}</p>}
-      {props.completedAtDate && <p> Completed On:{props.completedAtDate}</p>}
+      {props.dueDate && <p> Due on: {props.dueDate}</p>}
+      {props.completedAtDate && <p> Completed On: {props.completedAtDate}</p>}
       <p>Assignee: {props.assigneeName}</p>
     </div>
   );
