@@ -1,6 +1,5 @@
 .TaskItem {
-    border: 2px solid hsla(0, 79%, 4%, 0.857);
-    border-radius: 4px;
-    padding: 6px 8px;
-    margin-bottom: 6px;
-  }
+  /* border: 1px solid #DFDFDF; */
+  border-radius: 4px;
+  padding: 10
+}
