@@ -7,6 +7,8 @@ interface TaskFormProps {
 
 interface TaskFormState {
     title: string;
+    todoDescription:string;
+    dueDate:string;
   }
 
 
@@ -15,28 +17,45 @@ class TaskForm extends React.Component<TaskFormProps, TaskFormState> {
     constructor(props: TaskFormProps) {
         super(props);
         this.state = {
-          title: ""
+          title: "",
+          todoDescription:"",
+          dueDate:""
         }
       }
       addTask: React.FormEventHandler<HTMLFormElement> = (event) => {
         event.preventDefault();
         const newTask = {
-          title: this.state.title
+          title: this.state.title,
+          todoDescription:this.state.todoDescription,
+          dueDate:this.state.dueDate,
         }
         this.props.addTask(newTask);
-        this.setState({ title: "" });
+        this.setState({ title: "", todoDescription: "", dueDate: "" });
+
+
+
       };
   titleChanged: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     console.log(`${event.target.value}`);
     this.setState({ title: event.target.value });
+  };
+  descriptionChanged: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+    console.log(`${event.target.value}`);
+    this.setState({ todoDescription: event.target.value });
+  };
+  dueDateChanged: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+    console.log(`${event.target.value}`);
+    this.setState({ dueDate: event.target.value });
   };
  
   
   render(){
     return (
       <form onSubmit={this.addTask}>
-        <input type="text" value={this.state.title} onChange={this.titleChanged}/>
-        <button type="submit">Add item</button>
+        <input id="title" type="text" value={this.state.title} onChange={this.titleChanged}/>
+        <input type="text" id="todoDescription" value={this.state.todoDescription} onChange={this.descriptionChanged}/>
+        <input type="date" id="todoDueDate" value={this.state.dueDate} onChange={this.dueDateChanged}/>
+        <button id="addTaskButton" type="submit">Add item</button>
       </form>
     )
   }
