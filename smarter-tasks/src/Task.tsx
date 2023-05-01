@@ -8,13 +8,13 @@ interface TaskProp {
 class Task extends React.Component<TaskProp> {
   render() {
     return (
-      <div className="TaskItem">{this.props.title}
-      <div className="TaskItem">
-      {this.props.todoDescription}
-      </div>
-      <div className="TaskItem">
-      {this.props.dueDate}
-      </div>
+      <div className="TaskItem" >
+        <h1> {this.props.title}</h1>
+     
+        <h1> {this.props.todoDescription} </h1>
+      
+        <h1> {this.props.dueDate} </h1>
+   
       </div>
       
     )

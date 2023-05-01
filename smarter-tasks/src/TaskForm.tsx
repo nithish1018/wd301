@@ -24,6 +24,7 @@ class TaskForm extends React.Component<TaskFormProps, TaskFormState> {
       }
       addTask: React.FormEventHandler<HTMLFormElement> = (event) => {
         event.preventDefault();
+        if (this.state.title && this.state.dueDate) {
         const newTask = {
           title: this.state.title,
           todoDescription:this.state.todoDescription,
@@ -32,7 +33,7 @@ class TaskForm extends React.Component<TaskFormProps, TaskFormState> {
         this.props.addTask(newTask);
         this.setState({ title: "", todoDescription: "", dueDate: "" });
 
-
+      }
 
       };
   titleChanged: React.ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -52,7 +53,7 @@ class TaskForm extends React.Component<TaskFormProps, TaskFormState> {
   render(){
     return (
       <form onSubmit={this.addTask}>
-        <input id="title" type="text" value={this.state.title} onChange={this.titleChanged}/>
+        <input id="todoTitle" type="text" value={this.state.title} onChange={this.titleChanged}/>
         <input type="text" id="todoDescription" value={this.state.todoDescription} onChange={this.descriptionChanged}/>
         <input type="date" id="todoDueDate" value={this.state.dueDate} onChange={this.dueDateChanged}/>
         <button id="addTaskButton" type="submit">Add item</button>
