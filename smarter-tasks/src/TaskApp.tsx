@@ -12,6 +12,11 @@ const TaskApp = (props: TaskAppProp) => {
   const [taskAppState, setTaskAppState] = useLocalStorage<TaskAppState>("tasks", {
     tasks: [],
   });
+
+  const removeTask = (id: Number) => {
+    setTaskAppState({tasks: taskAppState.tasks.filter((ele)=>ele.id!==id)})
+  }
+
   React.useEffect(() => {
   const id = setTimeout(() => {
     console.log(`Saved ${taskAppState.tasks.length} items to backend...`);
@@ -40,7 +45,7 @@ const TaskApp = (props: TaskAppProp) => {
             Pending
           </h1>
           <TaskForm addTask={addTask} />
-          <TaskList tasks={taskAppState.tasks} />
+          <TaskList tasks={taskAppState.tasks} removeTaskCB={removeTask}/>
         </div>
       </div>
     </div>

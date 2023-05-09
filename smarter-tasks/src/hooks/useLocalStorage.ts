@@ -17,5 +17,9 @@ const getStoredValue = <T>(key: string, defaultValue: T): T => {
       return getStoredValue(key, defaultValue);
     });
   
+    useEffect(()=>{
+      localStorage.setItem(key, JSON.stringify(value));
+    }, [key, value])
+
     return [value, setValue];
   };
