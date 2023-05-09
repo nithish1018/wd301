@@ -1,23 +1,19 @@
 import React from "react";
 import './TaskCard.css';
-interface TaskProp {
+interface TaskItem {
   title: string;
   todoDescription:string;
   dueDate:string;
 }
-class Task extends React.Component<TaskProp> {
-  render() {
-    return (
-      <div className="TaskItem" >
-        <h1> {this.props.title}</h1>
-     
-        <h1> {this.props.todoDescription} </h1>
-      
-        <h1> {this.props.dueDate} </h1>
-   
-      </div>
-      
-    )
-  }
-}
+const Task= (props: TaskItem) => {
+  return (
+    <div className="TaskItem shadow-md border border-slate-100">
+      <h2 className="text-base font-bold my-1">{props.title}</h2>
+      <p className="text-sm text-slate-500">{props.dueDate}</p>
+      <p className="text-sm font-bold text-slate-500">
+        Description: {props.todoDescription}
+      </p>
+    </div>
+  );
+};
 export default Task;
