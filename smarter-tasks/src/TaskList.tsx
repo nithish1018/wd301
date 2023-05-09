@@ -15,7 +15,7 @@ const TaskList = (props: { tasks: TaskItem[], removeTaskCB: (id: number) => void
       dueDate={task.dueDate}
 
     />
-    <button onClick={() => props.removeTaskCB(task.id)}>Delete</button></li>
+    <button onClick={() => props.removeTaskCB(task.id)} className="text-blue deleteTaskButton">Delete</button></li>
   ));
   return <>{list}</>;
 };
