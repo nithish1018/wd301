@@ -25,7 +25,7 @@ const TaskDetailsPage: React.FC = () => {
   return (
     <div className="bg-white shadow-md rounded-md p-4">
       <div className="flex justify-between items-center mb-4">
-        <h3 > {task && task.title}</h3>
+        <h3>{task && task.title}</h3>
       </div>
       <p > {task && task.todoDescription}</p>
       <p> {task && task.dueDate}</p>

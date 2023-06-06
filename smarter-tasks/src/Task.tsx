@@ -2,7 +2,7 @@ import React from "react";
 import './TaskCard.css';
 import { Link } from "react-router-dom";
 interface TaskItem {
-  id: string;
+  id: number;
   title: string;
   todoDescription:string;
   dueDate:string;
