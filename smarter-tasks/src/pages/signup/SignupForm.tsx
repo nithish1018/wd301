@@ -8,9 +8,6 @@ const SignupForm: React.FC = () => {
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
-
-
-  const nav=useNavigate();
 //   const authToken = localStorage.getItem('authToken');
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -35,9 +32,6 @@ const SignupForm: React.FC = () => {
       localStorage.setItem('authToken', jsonData.token);
     //   localStorage.setItem('userData', jsonData.user);
     localStorage.setItem('userData', jsonData.data);
-
-   
-      nav("/dashboard");
     } catch (error) {
       console.error('SignUp failed:', error);
     }
