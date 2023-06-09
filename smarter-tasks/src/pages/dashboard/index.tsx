@@ -5,6 +5,8 @@ const Dashboard: React.FC = () => {
  const userData = JSON.parse(localStorage.getItem('userData')|| '{}');
  console.log(userData.name);
  console.log(userData.email);
+ const name=userData.name;
+ const email=userData.email;
  const logout = async () => {
   localStorage.removeItem('userData');
 
@@ -12,7 +14,11 @@ const Dashboard: React.FC = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">Dashboard</h1>
-      <Link to='/' id='logout-link' className="ml-6 text-gray-300 hover:text-white"> <button
+      <div className="flex justify-between items-center mb-4">
+      <p className="text-xl font-semibold text-center text-gray-800 mb-8">Name:{name}</p>
+      <p className="text-xl font-semibold text-center text-gray-800 mb-8">Email:{email}</p>
+      </div>
+      <Link to='/signin' id='logout-link' className="ml-6 text-gray-300 hover:text-white"> <button
           
           id="backToHomeButton"
           onClick={logout}
