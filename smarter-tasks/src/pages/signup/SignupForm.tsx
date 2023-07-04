@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {API_ENDPOINT}  from '../../config/constants';
-// import  {useNavigate}  from "react-router-dom";
+import  {useNavigate}  from "react-router-dom";
 
 
 const SignupForm: React.FC = () => {
@@ -9,6 +9,7 @@ const SignupForm: React.FC = () => {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
 //   const authToken = localStorage.getItem('authToken');
+const nav=useNavigate();
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -32,6 +33,7 @@ const SignupForm: React.FC = () => {
       localStorage.setItem('authToken', jsonData.token);
     //   localStorage.setItem('userData', jsonData.user);
     localStorage.setItem('userData', jsonData.data);
+    nav("/account")
     } catch (error) {
       console.error('SignUp failed:', error);
     }
