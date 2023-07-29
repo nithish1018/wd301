@@ -6,6 +6,7 @@ import Signin from "../pages/signin"
 import Signup from "../pages/signup"
 import Projects from "../pages/projects"
 import Members from "../pages/members"
+import Notfound from "../pages/Notfound";
 import Logout from "../pages/logout";
 
 const router = createBrowserRouter([
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
         path: "members",
         element: (<Members />)
       },
+      {
+        path:"*",
+        element:<Notfound/>
+      }
     ],
   },
 ]);
