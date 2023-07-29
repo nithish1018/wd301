@@ -35,7 +35,7 @@ export const addMember = async (dispatch: any, args: any) => {
   
       // And if everything goes well with the API call, we will dispatch an action, 
       // with `type` set to `ADD_MEMBER_SUCCESS` and in `payload` we will send the 
-      // new project `data`.
+      // new member `data`.
       dispatch({ type: 'ADD_MEMBER_SUCCESS', payload: data.user });
   
       // Next, I'll return a status called "ok", with value `true`
