@@ -29,12 +29,12 @@ const NewMember = () => {
     setIsOpen(true)
   }
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    const { name } = data
+    const { name,email,password } = data
 
     // Next, I'll call the addProject function with two arguments: 
     //`dispatchProjects` and an object with `name` attribute. 
     // As it's an async function, we will await for the response.
-    const response = await addMember(dispatchMembers, { name })
+    const response = await addMember(dispatchMembers, {  name, email, password })
 
     // Then depending on response, I'll either close the modal...
     if (response.ok) {
