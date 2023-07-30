@@ -1,18 +1,12 @@
 import React from "react";
-
-// First, I'll import the useProjectsState custom hook to access projects state.
 import { useMembersDispatch, useMembersState } from "../../context/members/context";
 import { deleteMember } from "../../context/members/actions";
 export default function MemberListItems() {
 
-  // I'll define a new constant called `state`, to call the useProjectsState() hook, 
-  // and get access to projects state.
   const dispatchMembers = useMembersDispatch();
   let state: any = useMembersState();
   console.log(state)
 
-  // Next, I'll destructure the state object to gain access to projects, 
-  // isLoading, isError and errorMessage property.
   const { members, isLoading, isError, errorMessage } = state
   console.log(members);
 
