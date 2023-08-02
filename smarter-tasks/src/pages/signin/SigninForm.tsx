@@ -79,7 +79,7 @@ const SigninForm: React.FC = () => {
       </button>
       <p style={{ fontStyle: "italic" }}>
         Don't have accont?{" "}
-        <a href="/signup" style={{ color: "blue" }}>
+        <a href="/signup" className='text-green-300'>
           Signup here
         </a>
       </p>
