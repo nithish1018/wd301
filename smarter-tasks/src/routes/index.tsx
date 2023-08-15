@@ -11,6 +11,7 @@ import Projects from "../pages/projects"
 import Members from "../pages/members"
 import Notfound from "../pages/Notfound";
 import Logout from "../pages/logout";
+import TaskDetailsContainer from "../pages/tasks/TaskDetailsContainer";
 
 const router = createBrowserRouter([
     { path: "/", element: <Navigate to="/account/projects" replace /> },
@@ -46,22 +47,30 @@ const router = createBrowserRouter([
           children: [
             { index: true, element: <Projects /> },
             {
-              path: ":projectID",
-              element: <ProjectDetails />,
+              path: "projects",
+              element: <ProjectContainer />,
               children: [
-                { index: true, element: <></> },
+                { index: true, element: <Projects /> },
                 {
-                  path: "tasks",
+                  path: ":projectID",
+                  element: <ProjectDetails />,
                   children: [
-                    { index: true, element: <Navigate to="../" /> },
+                    { index: true, element: <></> },
                     {
-                      path: "new",
-                      // Render `NewTask` component
-                      element: <NewTask />,
-                    },
-                    {
-                      path: ":taskID",
-                      children: [{ index: true, element: <>Show Task Details</> }],
+                      path: "tasks",
+                      children: [
+                        { index: true, element: <Navigate to="../" /> },
+                        {
+                          path: "new",
+                          element: <NewTask />,
+                        },
+                        {
+                          path: ":taskID",
+                          children: [
+                            { index: true, element: <TaskDetailsContainer /> },
+                          ],
+                        },
+                      ],
                     },
                   ],
                 },
