@@ -12,12 +12,6 @@ import { useTasksDispatch, useTasksState } from "../../context/task/context";
 import { updateTask } from "../../context/task/actions";
 import CheckIcon from "@heroicons/react/24/outline/CheckIcon";
 import { useMembersState } from "../../context/members/context";
-// import Comments from "./Comments";
-// import { fetchComments } from "../../context/comment/actions";
-// import {
-//   useCommentsDispatch,
-//   useCommentsState,
-// } from "../../context/comment/context";
 import { useProjectsState } from "../../context/projects/context";
 import { TaskDetailsPayload } from "../../context/task/types";
 
