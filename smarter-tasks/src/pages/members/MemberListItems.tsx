@@ -12,6 +12,9 @@ export default function MemberListItems() {
 
   // If `isLoading` is true, and there are no projects, in that case, 
   // I'll show a loading text
+  if (members.length === 0) {
+    throw Error("Error!!!");
+  }
   if (members.length === 0 && isLoading) {
     return <span>Loading...</span>;
   }
