@@ -2,7 +2,7 @@ import { useState, useContext, Fragment } from 'react'
 import { ThemeContext } from "../../context/theme";
 import { Disclosure, Menu, Transition, Switch } from '@headlessui/react'
 import { UserCircleIcon } from '@heroicons/react/24/outline'
-import Logo from "../../assets/images/smartertasks_logo.png"
+import Logo from "../../assets/images/logo.png"
 import { Link, useLocation } from "react-router-dom"
 
 const userNavigation = [
