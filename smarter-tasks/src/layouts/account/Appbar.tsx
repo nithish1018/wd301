@@ -82,7 +82,7 @@ document.documentElement.classList.remove("dark");
             <span
               aria-hidden="true"
               className={`${enabled ? 'translate-x-9' : 'translate-x-0'}
-                pointer-events-none inline-block h-[20px] w-[20px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
+                pointer-events-none inline-block h-[20px] w-[20px] transform rounded-full bg-white  ring-0 transition duration-200 ease-in-out`}
             />
           </Switch>
               <div className="hidden md:block">
@@ -102,7 +102,7 @@ document.documentElement.classList.remove("dark");
                       leaveFrom="transform opacity-100 scale-100"
                       leaveTo="transform opacity-0 scale-95"
                     >
-                      <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1  ring-1 ring-black ring-opacity-5 focus:outline-none">
                         {userNavigation.map((item) => (
                           <Menu.Item key={item.name}>
                             {({ active }) => (
